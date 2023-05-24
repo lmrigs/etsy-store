@@ -1,11 +1,18 @@
 // colours
 
-$primary: #f4f1ed;
-$secondary: #a9c6cc;
-$tertiary: #e3d6c8;
-$lowlight: #6b6051;
-$black: #000000;
+$primary: rgba(244, 241, 237);
+$secondary: rgb(169, 198, 204);
+$tertiary: rgb(227, 214, 200);
+$lowlight: rgb(107, 96, 81);
+$black: rgb(0, 0, 0);
 
 // fonts
 $alata: "Alata", Arial, sans-serif;
 $main: "Abyssinica SIL", Georgia, serif;
+
+// Affects
+$overlay: linear-gradient(
+  0deg,
+  rgba(107, 96, 81, 0.38),
+  rgba(107, 96, 81, 0.38)
+);

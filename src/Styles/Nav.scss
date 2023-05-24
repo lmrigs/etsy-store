@@ -39,6 +39,7 @@ ul {
 
   a.menu-item {
     text-decoration: none;
+    text-transform: lowercase;
     font-family: $main;
     color: $primary;
     padding: 8px 20px;

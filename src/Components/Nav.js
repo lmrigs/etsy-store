@@ -37,7 +37,7 @@ export default function Nav() {
         <ul className="menu-items">
           <li onClick={handleListClick}>
             <a
-              href="#"
+              href="#products"
               className="menu-item"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -47,7 +47,7 @@ export default function Nav() {
           </li>
           <li onClick={handleListClick}>
             <a
-              href="#"
+              href="#about"
               className="menu-item"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
