@@ -1,5 +1,6 @@
 @import "Config";
 @import "Mixins";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 .about-container {
   background-color: $tertiary;
@@ -23,39 +24,28 @@
   }
 }
 
-.gallery-container {
-  margin: auto;
-  padding-bottom: 30px;
-  width: 400px;
-
-  img {
-    width: 100%;
-    height: 275px;
-    border: 2px solid black;
-  }
-  .previous-image {
-    display: none;
-  }
+.image-gallery-icon {
+  color: rgba($tertiary, 0.6);
 }
 
-.arrow-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 5px;
-  margin: 10px;
+.image-gallery-slides {
+  position: relative;
+}
 
-  button {
-    border: none;
-    background-color: $tertiary;
-
-    img {
-      border: none;
-      width: 20px;
-      height: 25px;
-      padding: 5px;
-    }
-  }
+.image-gallery-slides::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    107,
+    96,
+    81,
+    0.46
+  ); /* Adjust the transparency by modifying the last value (0.5 in this case) */
+  pointer-events: none; /* Allows click events to pass through the overlay */
 }
 
 @media screen and (min-width: 1024px) {
@@ -65,31 +55,39 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    margin: 0;
+    padding: 60px;
 
     .about-us {
       width: 50%;
+      padding: 0 100px 0 40px;
+
+      p {
+        width: 90%;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+      }
     }
   }
+}
 
-  .gallery-container {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 5px;
+@media (min-width: 1920px) {
+  .about-container {
+    justify-content: space-around;
 
-    .previous-image {
-      display: block;
+    .about-us {
+      width: 40%;
+      color: $lowlight;
+
+      h2 {
+        font-size: 38px;
+        letter-spacing: 3px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
-
-    img {
-      width: 90%;
-      height: 350px;
-      border: 2px solid black;
-      object-fit: fill;
-    }
-  }
-
-  .arrow-container {
-    display: none;
   }
 }

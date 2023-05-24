@@ -1,47 +1,21 @@
 import "../Styles/About.scss";
 import { useState } from "react";
-
-function Gallery({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  function handleNext() {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }
-
-  function handlePrev() {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  }
-
-  const prevIndex = (currentIndex - 1 + images.length) % images.length;
-
-  return (
-    <div className="gallery-container">
-      <img
-        src={images[prevIndex]}
-        alt={`Thumbnail ${prevIndex}`}
-        className="previous-image"
-      />
-      <img src={images[currentIndex]} alt={`Thumbnail ${currentIndex}`} />
-
-      <div className="arrow-container">
-        <button onClick={handlePrev}>
-          <img src={require("../Images/left-arrow.png")}></img>
-        </button>
-        <button onClick={handleNext}>
-          <img src={require("../Images/right-arrow.png")}></img>
-        </button>
-      </div>
-    </div>
-  );
-}
+import ImageGallery from "react-image-gallery";
 
 export default function About() {
   const images = [
-    require("../Images/Gallery/Rectangle-18.png"),
-    require("../Images/Gallery/Rectangle-19.png"),
-    require("../Images/Gallery/Rectangle-3.png"),
+    {
+      original: require("../Images/Gallery/Rectangle-18.png"),
+      originalAlt: "bracelets",
+    },
+    {
+      original: require("../Images/Gallery/Rectangle-19.png"),
+      originalAlt: "bracelets",
+    },
+    {
+      original: require("../Images/Gallery/Rectangle-3.png"),
+      originalAlt: "bracelets",
+    },
   ];
 
   return (
@@ -66,7 +40,13 @@ export default function About() {
           you wearing one of our creations!
         </p>
       </div>
-      <Gallery images={images} />
+      <ImageGallery
+        items={images}
+        showThumbnails={false}
+        showFullscreenButton={false}
+        showPlayButton={false}
+        autoPlay={false}
+      />
     </div>
   );
 }
