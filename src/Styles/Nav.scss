@@ -10,21 +10,20 @@
   right: 0;
   z-index: 100;
   width: 100vw;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+  background-color: rgba(0, 0, 0, 0.2);
   height: 55px;
 }
 
 .navbar-links {
   width: 100%;
   display: none;
-  z-index: 999;
 }
 
 .visible {
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.2);
-  height: 200px;
 }
 
 ul {
@@ -76,6 +75,7 @@ div.mobileitems {
   position: relative;
   transition: transform 0.3s ease-in-out;
   margin: 25px 15px 0 0;
+  padding: 0;
 }
 
 .burger-icon span:first-child {
@@ -107,7 +107,13 @@ div.mobileitems {
   .burger {
     display: none;
   }
-
+  .navbar {
+    height: 80px;
+    background-color: transparent;
+  }
+  .active {
+    background-color: $black;
+  }
   .navbar-links {
     display: block;
   }
@@ -121,6 +127,18 @@ div.mobileitems {
 }
 
 @media (min-width: 1024px) {
+  .navbar {
+    height: 80px;
+    .navbar-links {
+      @include row;
+      justify-content: flex-end;
+      height: 80px;
+      .menu-items {
+        height: 80px;
+      }
+    }
+  }
+
   a.menu-item {
     font-size: 24px;
     padding: 8px 20px;

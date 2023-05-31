@@ -1,10 +1,24 @@
 import "../Styles/Nav.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isSolidNav, setSolidNav] = useState(false);
 
-  function handleBurgerClick() {
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+  });
+
+  function changeBackground() {
+    if (window.scrollY >= 600) {
+      setSolidNav(true);
+    } else {
+      setSolidNav(false);
+    }
+  }
+
+  function handleBurgerClick(e) {
+    e.preventDefault();
     setIsVisible((prev) => !prev);
   }
 
@@ -21,7 +35,7 @@ export default function Nav() {
   }
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isSolidNav ? "active" : ""}`}>
       <div className="mobileitems">
         <a
           href="#"
@@ -57,7 +71,7 @@ export default function Nav() {
           </li>
           <li onClick={handleListClick}>
             <a
-              href="#"
+              href="#contact"
               className="menu-item"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

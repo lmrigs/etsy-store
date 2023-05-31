@@ -3,12 +3,14 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 .about-container {
+  @include column;
   background-color: $tertiary;
 }
 
 .about-us {
   color: $lowlight;
   padding: 40px 60px;
+  @include column;
 
   h2 {
     font-family: $main;
@@ -21,15 +23,25 @@
     font-family: $alata;
     font-size: 16px;
     line-height: 24px;
+    text-align: center;
   }
 }
 
-.image-gallery-icon {
-  color: rgba($tertiary, 0.6);
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+  top: 80%;
 }
 
-.image-gallery-slides {
-  position: relative;
+.image-gallery-icon {
+  color: $tertiary;
+
+  &:hover {
+    color: $tertiary;
+  }
+
+  &:active {
+    color: black;
+  }
 }
 
 .image-gallery-slides::after {
@@ -43,29 +55,142 @@
     107,
     96,
     81,
-    0.46
+    0.16
   ); /* Adjust the transparency by modifying the last value (0.5 in this case) */
   pointer-events: none; /* Allows click events to pass through the overlay */
 }
 
-@media screen and (min-width: 1024px) {
+.image-gallery-thumbnails-wrapper {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .image-gallery-slides {
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    height: 450px;
+    border: 2px solid $black;
+  }
+
+  .image-gallery-slide {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.image-gallery-center {
+      position: relative;
+    }
+
+    .image-gallery-image {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .image-gallery-thumbnails-wrapper {
+    display: block;
+
+    .image-gallery-thumbnail {
+      display: inline-block;
+      width: 106px;
+      height: 75px;
+      background: transparent;
+      border: none;
+
+      &.active,
+      &:focus {
+        outline: none;
+        border: 4px solid $black;
+        transform: none;
+        transition: none;
+      }
+
+      .image-gallery-thumbnail-image {
+        box-sizing: border-box;
+        width: 98px;
+        height: 68px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
   .about-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 60px;
+    @include row;
+    padding: 30px;
 
     .about-us {
       width: 50%;
-      padding: 0 100px 0 40px;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 0 40px;
+      flex: 0 0 400px;
+
+      h2 {
+        margin-left: 10px;
+        margin-bottom: 0;
+      }
+      p {
+        width: 85%;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+        margin: 0;
+        padding: 15px;
+      }
+    }
+    .image-gallery {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+
+      .image-gallery-slides {
+        height: 100%;
+      }
+      .image-gallery-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+  .image-gallery-left-nav .image-gallery-svg,
+  .image-gallery-right-nav .image-gallery-svg {
+    height: 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-container {
+    padding: 60px;
+
+    .about-us {
+      align-items: flex-start;
+      height: 450px;
+      flex: 0.5 0 350px;
+
+      h2 {
+        margin-top: 0;
+        font-size: 45px;
+      }
 
       p {
-        width: 90%;
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 30px;
+        font-size: 20px;
+        padding: 0;
+      }
+    }
+
+    .image-gallery {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+
+      .image-gallery-image {
+        max-height: 402px;
       }
     }
   }
@@ -74,19 +199,35 @@
 @media (min-width: 1920px) {
   .about-container {
     justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 80px;
 
     .about-us {
       width: 40%;
       color: $lowlight;
+      flex: 0.4 0 600px;
 
       h2 {
-        font-size: 38px;
+        font-size: 45px;
         letter-spacing: 3px;
       }
 
       p {
-        font-size: 20px;
+        font-size: 24px;
         line-height: 24px;
+      }
+    }
+    .image-gallery {
+      flex: 1.2;
+      flex-wrap: wrap;
+
+      .image-gallery-content {
+        width: 100%;
+      }
+      .image-gallery-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
       }
     }
   }

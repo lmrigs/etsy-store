@@ -6,14 +6,12 @@ export default function About() {
   const images = [
     {
       original: require("../Images/Gallery/Rectangle-18.png"),
+      thumbnail: require("../Images/Gallery/Rectangle-18.png"),
       originalAlt: "bracelets",
     },
     {
       original: require("../Images/Gallery/Rectangle-19.png"),
-      originalAlt: "bracelets",
-    },
-    {
-      original: require("../Images/Gallery/Rectangle-3.png"),
+      thumbnail: require("../Images/Gallery/Rectangle-19.png"),
       originalAlt: "bracelets",
     },
   ];
@@ -23,26 +21,23 @@ export default function About() {
       <div className="about-us">
         <h2>About Us</h2>
         <p>
-          Our store is a family-owned business that specializes in creating
-          handmade jewelry from our studio in Sarnia, Ontario
+          Our company is a family-owned business that specializes in creating
+          handmade jewelry from our studio in Sarnia, Ontario.
         </p>
         <p>
           We are passionate about crafting unique and stunning pieces that are
           not only beautiful but also durable.
         </p>
         <p>
-          Our skilled artists use a variety of materials, including solid
-          hardwood, poured epoxy, and mixed beads, to create one-of-a-kind rings
-          and bracelets that showcase your individual style.{" "}
-        </p>
-        <p>
-          Thank you for supporting our small business, and we can't wait to see
-          you wearing one of our creations!
+          Our skilled artists use a variety of materials, including local
+          hardwoods and epoxy to create one-of-a-kind bracelets that will
+          showcase your individual style.
         </p>
       </div>
       <ImageGallery
         items={images}
-        showThumbnails={false}
+        showThumbnails={true}
+        thumbnailPosition={"bottom"}
         showFullscreenButton={false}
         showPlayButton={false}
         autoPlay={false}

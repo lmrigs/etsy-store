@@ -1,0 +1,62 @@
+@import "Config";
+@import "Mixins";
+
+.footer-container {
+  @include row;
+  background-color: $black;
+  color: $primary;
+}
+
+.contact-container {
+  @include column;
+  align-items: flex-start;
+  padding: 60px 30px 30px;
+
+  h4 {
+    padding: 0;
+    margin: 0;
+    font-family: $main;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.3em;
+  }
+
+  p {
+    padding: 0;
+    margin: 15px 0 40px 0;
+    font-family: $main;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.3em;
+  }
+
+  .icons {
+    margin-left: 0;
+    img {
+      margin: 15px 30px 40px 0;
+    }
+  }
+}
+
+button {
+  padding-right: 50px;
+  border: none;
+  background-color: $black;
+  cursor: pointer;
+}
+
+img {
+  background-color: $black;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    justify-content: space-around;
+  }
+  .contact-container {
+    @include row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+  }
+}
