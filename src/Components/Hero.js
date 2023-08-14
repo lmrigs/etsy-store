@@ -5,7 +5,7 @@ export default function Hero() {
     <div className="hero-container">
       <div className="hero-text">
         <h1>
-          Colbornes<br></br>Handcrafted<br></br>Bracelets
+          Your <br></br>Storename<br></br>Here
         </h1>
       </div>
     </div>

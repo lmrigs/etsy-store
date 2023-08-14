@@ -2,12 +2,14 @@
 @import "Mixins";
 
 .hero-container {
+  width: 100%;
   height: 700px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.47), rgba(0, 0, 0, 0.47)),
-    url(../Images/Hero-Image.png);
+    url(../Images/laura-chouette-cQ1n1_EPuf4-unsplash.jpg);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .hero-text {

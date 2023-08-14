@@ -1,15 +1,16 @@
 @import "Config";
 @import "Mixins";
-@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 .about-container {
   @include column;
   background-color: $tertiary;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .about-us {
   color: $lowlight;
-  padding: 40px 60px;
+  padding: 40px 30px;
   @include column;
 
   h2 {
@@ -23,7 +24,8 @@
     font-family: $alata;
     font-size: 16px;
     line-height: 24px;
-    text-align: center;
+    text-align: left;
+    color: #2e2210;
   }
 }
 

@@ -19,12 +19,12 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="footer-container" id="contact">
-      <div className="contact-container">
+    <div className="footer-container">
+      <div className="footer-contact">
         <div className="address">
           <h4>Studio</h4>
           <p>
-            111 Colborne Rd. <br></br>Sarnia, Ontario
+            111 Sample Rd. <br></br>Toronto, Maryland
           </p>
         </div>
         <div className="email">
@@ -37,11 +37,11 @@ export default function Footer() {
             <a href="https://www.instagram.com/" target="_blank">
               <img src={require("../Images/Icons/insta.png")}></img>
             </a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src={require("../Images/Icons/shopify.png")}></img>
+            </a>
             <a href="https://www.etsy.com/" target="_blank">
               <img src={require("../Images/Icons/etsy.png")}></img>
-            </a>
-            <a href="https://www.shopify.com/" target="_blank">
-              <img src={require("../Images/Icons/shopify.png")}></img>
             </a>
           </div>
         </div>

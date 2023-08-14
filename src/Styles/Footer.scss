@@ -3,14 +3,26 @@
 
 .footer-container {
   @include row;
+  position: relative;
   background-color: $black;
   color: $primary;
+  overflow-x: hidden;
 }
 
-.contact-container {
+.footer-contact {
   @include column;
   align-items: flex-start;
   padding: 60px 30px 30px;
+
+  .address,
+  .email,
+  .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+  }
 
   h4 {
     padding: 0;
@@ -24,10 +36,11 @@
   p {
     padding: 0;
     margin: 15px 0 40px 0;
-    font-family: $main;
+    font-family: $alata;
     font-size: 13px;
     line-height: 16px;
     letter-spacing: 0.3em;
+    color: rgb(227, 214, 200);
   }
 
   .icons {
@@ -39,21 +52,25 @@
 }
 
 button {
-  padding-right: 50px;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
   border: none;
   background-color: $black;
   cursor: pointer;
-}
 
-img {
-  background-color: $black;
+  img {
+    background-color: $black;
+    height: 50px;
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
   .footer-container {
     justify-content: space-around;
   }
-  .contact-container {
+  .footer-contact {
     @include row;
     justify-content: space-around;
     align-items: center;

@@ -39,7 +39,7 @@ export default function Nav() {
       <div className="mobileitems">
         <a
           href="#"
-          className={`burger ${isVisible ? "burger-icon open" : ""}`}
+          className={`burger-icon ${isVisible ? " open" : ""}`}
           onClick={handleBurgerClick}
         >
           <span className="bar1"></span>
