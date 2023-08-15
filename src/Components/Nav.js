@@ -36,17 +36,15 @@ export default function Nav() {
 
   return (
     <div className={`navbar ${isSolidNav ? "active" : ""}`}>
-      <div className="mobileitems">
-        <a
-          href="#"
-          className={`burger-icon ${isVisible ? " open" : ""}`}
-          onClick={handleBurgerClick}
-        >
-          <span className="bar1"></span>
-          <span className="bar2"></span>
-          <span className="bar3"></span>
-        </a>
-      </div>
+      <a
+        href="#"
+        className={`burger-icon ${isVisible ? " open" : ""}`}
+        onClick={handleBurgerClick}
+      >
+        <span className="bar1"></span>
+        <span className="bar2"></span>
+        <span className="bar3"></span>
+      </a>
       <div className={`navbar-links ${isVisible ? "visible" : ""}`}>
         <ul className="menu-items">
           <li onClick={handleListClick}>

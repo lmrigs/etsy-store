@@ -16,8 +16,8 @@ export default function About() {
 
   return (
     <div className="about-container" id="about">
-      <div className="about-us">
-        <h2>About Us</h2>
+      <h2>About Us</h2>
+      <div className="about-text">
         <p>
           Our company is a family-owned business that specializes in creating
           handmade leather goods.

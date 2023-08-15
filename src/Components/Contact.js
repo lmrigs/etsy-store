@@ -90,7 +90,6 @@ export default function Contact() {
             <p>support@etsyshop.ca</p>
           </div>
         </div>
-
         <div className="form-fields">
           <ContactUs />
         </div>
