@@ -3,13 +3,14 @@
 
 .contact-container {
   width: 100%;
-  background-color: #a9c6cc;
+  background-color: $secondary;
   overflow-x: hidden;
+  padding-bottom: 20px;
 
   h2 {
     text-align: center;
     width: 70%;
-    color: blue($color: #000000);
+    color: $black;
     margin: 20px auto;
     font-family: $main;
     font-size: 30px;
@@ -20,7 +21,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid $black;
     padding: 20px 10px;
     width: 80%;
     margin: auto;
@@ -35,7 +36,7 @@
       h3 {
         text-align: center;
         width: 70%;
-        color: blue($color: #000000);
+        color: $black;
         margin: 0 auto;
         font-family: $alata;
       }
@@ -46,7 +47,6 @@
         flex-direction: row;
         align-items: center;
         gap: 10px;
-
         color: $black;
         font-family: $alata;
       }
@@ -60,7 +60,7 @@
   height: 2px;
   width: 80%;
   margin: 20px auto;
-  background: black;
+  background: $black;
 }
 
 .form-fields {
@@ -101,16 +101,9 @@
       width: 146px;
       height: 40px;
       margin: 8px;
-      background-color: #000000;
+      background-color: $black;
       color: #ffffffd9;
     }
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .phone,
-  .email {
-    margin-left: 200px;
   }
 }
 

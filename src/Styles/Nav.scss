@@ -2,9 +2,6 @@
 @import "Mixins";
 
 .navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   right: 0;
@@ -56,9 +53,9 @@ div.mobileitems {
 }
 
 .burger-icon {
-  position: absolute;
-  top: 8px;
-  right: 10px;
+  position: fixed;
+  top: 5px;
+  right: 8px;
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease-in-out;
@@ -101,7 +98,7 @@ div.mobileitems {
 }
 
 @media screen and (min-width: 768px) {
-  .burger {
+  .burger-icon {
     display: none;
   }
   .navbar {

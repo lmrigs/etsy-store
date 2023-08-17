@@ -2,119 +2,100 @@
 @import "Mixins";
 
 .about-container {
-  @include column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: $tertiary;
-  margin: 0;
-  overflow-x: hidden;
-}
-
-.about-us {
-  color: $lowlight;
-  padding: 40px 30px;
-  @include column;
 
   h2 {
     font-family: $main;
     text-transform: uppercase;
     font-size: 30px;
     letter-spacing: 2px;
+    color: $lowlight;
   }
+  .content-container {
+    width: 90%;
+    margin: 0 auto 80px;
 
-  p {
-    font-family: $alata;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: left;
-    color: #2e2210;
-  }
-}
-
-.image-gallery-left-nav,
-.image-gallery-right-nav {
-  top: 80%;
-}
-
-.image-gallery-icon {
-  color: $tertiary;
-
-  &:hover {
-    color: $tertiary;
-  }
-
-  &:active {
-    color: black;
-  }
-}
-
-.image-gallery-slides::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(
-    107,
-    96,
-    81,
-    0.16
-  ); /* Adjust the transparency by modifying the last value (0.5 in this case) */
-  pointer-events: none; /* Allows click events to pass through the overlay */
-}
-
-.image-gallery-thumbnails-wrapper {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .image-gallery-slides {
-    line-height: 0;
-    overflow: hidden;
-    position: relative;
-    white-space: nowrap;
-    text-align: center;
-    height: 450px;
-    border: 2px solid $black;
-  }
-
-  .image-gallery-slide {
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-
-    &.image-gallery-center {
+    .creator-image {
+      width: 250px;
+      height: 300px;
+      position: absolute;
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.47),
+          rgba(0, 0, 0, 0.47)
+        ),
+        url(../Images/about-image.jpg);
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover;
+      overflow-x: hidden;
+    }
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
-    }
+      top: 60px;
+      left: 30px;
+      width: 250px;
+      height: 300px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      border: 2px solid $lowlight;
+      background-color: rgba(107, 96, 81, 0.6);
 
-    .image-gallery-image {
-      width: 100%;
-      object-fit: contain;
+      p {
+        text-align: center;
+        font-family: $alata;
+        font-size: 16px;
+        line-height: 16px;
+        color: $tertiary;
+      }
     }
   }
+}
 
-  .image-gallery-thumbnails-wrapper {
-    display: block;
+@media (min-width: 375px) {
+  .about-container {
+    .content-container {
+      width: 90%;
+      margin: 0 20px 80px 67px;
 
-    .image-gallery-thumbnail {
-      display: inline-block;
-      width: 106px;
-      height: 75px;
-      background: transparent;
-      border: none;
-
-      &.active,
-      &:focus {
-        outline: none;
-        border: 4px solid $black;
-        transform: none;
-        transition: none;
+      .creator-image {
+        width: 250px;
+        height: 300px;
       }
+      .about-text {
+        top: 60px;
+        left: 30px;
+        width: 250px;
+        height: 300px;
+      }
+    }
+  }
+}
 
-      .image-gallery-thumbnail-image {
-        box-sizing: border-box;
-        width: 98px;
-        height: 68px;
+@media (min-width: 425px) {
+  .about-container {
+    padding-bottom: 130px;
+    .content-container {
+      width: 90%;
+      margin: 0 0 0 50px;
+
+      .creator-image {
+        width: 250px;
+        height: 300px;
+      }
+      .about-text {
+        top: 80px;
+        left: 80px;
+        width: 250px;
+        height: 300px;
       }
     }
   }

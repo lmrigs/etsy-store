@@ -4,7 +4,7 @@
 .footer-container {
   @include row;
   position: relative;
-  background-color: $black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: $primary;
   overflow-x: hidden;
 }
@@ -51,16 +51,16 @@
   }
 }
 
-button {
+button#top.top {
   position: absolute;
   bottom: 60px;
   right: 60px;
   border: none;
-  background-color: $black;
+  background-color: rgba(0, 0, 0, -0.2);
   cursor: pointer;
 
   img {
-    background-color: $black;
+    background-color: rgba(0, 0, 0, -0.2);
     height: 50px;
     width: auto;
   }
@@ -69,11 +69,26 @@ button {
 @media (min-width: 768px) {
   .footer-container {
     justify-content: space-around;
-  }
-  .footer-contact {
-    @include row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 80px;
+
+    button#top.top {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      border: none;
+      background-color: rgba(0, 0, 0, -0.2);
+      cursor: pointer;
+
+      img {
+        background-color: rgba(0, 0, 0, -0.2);
+        height: 40px;
+        width: auto;
+      }
+    }
+    .footer-contact {
+      @include row;
+      justify-content: space-around;
+      align-items: center;
+      gap: 80px;
+    }
   }
 }
